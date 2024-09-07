@@ -1,0 +1,510 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.content-wrap {
+  flex: 1;
+}
+
+/* Style global pour les titres */
+.title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  margin: 40px 0;
+  position: relative;
+  padding-bottom: 20px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Styles pour les titres h1 */
+h1.title {
+  font-size: 2.5rem;
+  color: #030303;
+  text-transform: uppercase;
+}
+
+/* Styles pour les titres h3 */
+h3.title {
+  font-size: 1.5rem;
+  color: #555;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+/* Styles pour les sous-titres dans les sections */
+h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: #666;
+  text-align: left;
+  margin: 20px 0;
+}
+
+/* Effet de zoom au survol */
+.title:hover {
+  transform: scale(1.1);
+  /* Zoom à 110% */
+  color: #080808;
+  /* Couleur de texte changeant au survol */
+}
+
+/* Contenu principal */
+
+.content-wrap {
+  flex: 1;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list-unstyled {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Header */
+.header {
+  background: rgba(255, 255, 255, 0.545);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Ombre subtile pour un léger effet de profondeur */
+  padding: 1rem 0;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.header .grid {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styles pour le logo */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem; /* Augmenter légèrement la taille pour plus de visibilité */
+  font-weight: 700;
+  color: #0e0e0e;
+  margin: 0;
+  letter-spacing: 1px; /* Espacement des lettres pour un style élégant */
+}
+
+/* style pour l'acceuil */
+
+.container-acceuil {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* style pour l'acceuil */
+.grid-acceuil {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style de base pour l'image d'accueil */
+.grid-acceuil img {
+  width: 20px;
+  height: 20px;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Effet de survol (hover) pour l'image d'accueil */
+.grid-acceuil a:hover img {
+  transform: scale(1.2); /* Agrandir légèrement l'image */
+}
+
+/* Style du bouton burger */
+.burger {
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  position: relative;
+  background: transparent;
+  border: none;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Espacement égal entre les barres */
+}
+
+.burger .bar {
+  display: inline-block;
+  /* Affiche les barres */
+  width: 25px;
+  /* Largeur des barres */
+  height: 2px;
+  /* Hauteur des barres */
+  background: black;
+  /* Couleur des barres */
+  position: absolute;
+  /* Positionnement absolu pour les aligner */
+  transition: all 0.3s;
+  /* Transition douce pour les changements */
+  border-radius: 2px;
+  /* Coins arrondis */
+}
+
+.burger .bar:nth-child(1) {
+  top: 10%;
+  /* La première barre est en haut */
+  width: 25px;
+}
+
+.burger .bar:nth-child(2) {
+  top: 50%;
+  /* La barre du milieu est centrée verticalement */
+  transform: translateY(-50%);
+  /* Centrage vertical */
+  width: 25px;
+}
+
+.burger .bar:nth-child(3) {
+  bottom: 10%;
+  /* La dernière barre est en bas */
+  width: 25px;
+}
+
+.burger.open .bar:nth-child(1) {
+  transform: rotate(45deg);
+  /* Rotation pour la barre supérieure */
+  top: 11px;
+  /* Ajustement vertical */
+  width: 80%;
+}
+
+.burger.open .bar:nth-child(2) {
+  opacity: 0;
+  /* Cache la barre du milieu */
+}
+
+.burger.open .bar:nth-child(3) {
+  transform: rotate(-45deg);
+  /* Rotation pour la barre inférieure */
+  top: 11px;
+  /* Ajustement vertical */
+  width: 80%;
+}
+
+/* Style global pour la galerie */
+.galerie2 {
+  padding: 3rem 2rem;
+  background-color: whitesmoke;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Section de la galerie */
+.gallery-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 6rem; /* Espace généreux entre le header et la galerie */
+}
+
+/* Grille de la galerie élégante et moderne */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem; /* Espacement généreux entre les images */
+  padding: 20px;
+  width: 100%;
+  background-color: #f9f9f9; /* Légère teinte pour un contraste subtil */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05); /* Ombre légère pour plus de profondeur */
+}
+
+/* Style des vidéos dans un cadre élégant */
+.gallery-item {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ddd; /* Bordure fine et subtile */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 12px; /* Arrondissement plus prononcé pour un look raffiné */
+  background-color: #222121; /* Fond blanc pour un contraste avec les vidéos */
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce pour donner un effet flottant */
+}
+
+/* Effet lors du survol */
+.gallery-item:hover {
+  transform: translateY(-5px); /* Soulève légèrement l'élément lors du survol */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Renforce l'ombre au survol */
+}
+
+/* Style pour les vidéos */
+.gallery-item video {
+  max-width: 100%; /* Les vidéos ne dépasseront pas la taille du conteneur */
+  height: auto;
+  display: block;
+}
+
+/* Légende discrète et élégante */
+.gallery-item figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent pour la légende */
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.gallery-item:hover figcaption {
+  opacity: 1; /* Apparition de la légende au survol */
+}
+
+/* Style de base pour le footer */
+.footer {
+  background-color: #f8f9fa;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-top: 1px solid #dee2e6;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer p {
+  margin: 1rem 0 0;
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+/* Menu de navigation pour les petits écrans */
+@media screen and (max-width: 749px) {
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .header .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 0 auto;
+  }
+
+  .header .grid {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.2rem;
+  }
+
+  .burger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    background: transparent;
+    border: none;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Barres du burger */
+  .burger div {
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: right 0.5s ease;
+    z-index: 1000;
+    padding-top: 1rem;
+  }
+
+  .nav-menu.open {
+    right: 0;
+    margin-top: 1rem;
+  }
+
+  .nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-menu li {
+    margin: 8px 0;
+  }
+
+  .menu li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s ease;
+  }
+
+  .menu li a:hover {
+    color: #9a9b9c;
+  }
+
+  /* Ajuster la largeur du container pour les petits écrans */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  /* Grille adaptée aux petits écrans */
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Chaque élément de la grille est centré */
+  .grid__item {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Responsive styling pour les grands écrans */
+@media screen and (min-width: 750px) {
+  .burger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    background: transparent;
+    border: none;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: right 0.5s ease;
+    z-index: 1000;
+  }
+
+  .nav-menu.open {
+    right: 0;
+    margin-top: 1rem;
+  }
+
+  .nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-menu li {
+    margin: 8px 0;
+  }
+
+  .menu li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s ease;
+  }
+
+  .menu li a:hover {
+    color: #9a9b9c;
+  }
+}

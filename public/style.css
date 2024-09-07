@@ -1,0 +1,1312 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.content-wrap {
+  flex: 1;
+}
+
+/* Style global pour les titres */
+.title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  margin: 40px 0;
+  position: relative;
+  padding-bottom: 20px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Styles pour les titres h1 */
+h1.title {
+  font-size: 2.5rem;
+  color: #030303;
+  text-transform: uppercase;
+}
+
+/* Styles pour les titres h3 */
+h3.title {
+  font-size: 1.5rem;
+  color: #555;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+/* Styles pour les sous-titres dans les sections */
+h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: #666;
+  text-align: left;
+  margin: 20px 0;
+}
+
+/* Effet de zoom au survol */
+.title:hover {
+  transform: scale(1.1);
+  /* Zoom à 110% */
+  color: #080808;
+  /* Couleur de texte changeant au survol */
+}
+
+/* Contenu principal */
+
+.content-wrap {
+  flex: 1;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list-unstyled {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Header */
+.header {
+  background: rgba(255, 255, 255, 0.545);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Ombre subtile pour un léger effet de profondeur */
+  padding: 1rem 0;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.header .grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Styles pour le logo */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem; /* Augmenter légèrement la taille pour plus de visibilité */
+  font-weight: 700;
+  color: #0e0e0e;
+  margin: 0;
+  letter-spacing: 1px; /* Espacement des lettres pour un style élégant */
+}
+
+/* style pour l'acceuil */
+.grid-acceuil {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style de base pour l'image d'accueil */
+.grid-acceuil img {
+  width: 20px;
+  height: 20px;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Effet de survol (hover) pour l'image d'accueil */
+.grid-acceuil a:hover img {
+  transform: scale(1.2); /* Agrandir légèrement l'image */
+}
+
+/* Style du bouton burger */
+.burger {
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  position: relative;
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Espacement égal entre les barres */
+}
+
+.burger .bar {
+  display: inline-block;
+  /* Affiche les barres */
+  width: 30px;
+  /* Largeur des barres */
+  height: 2px;
+  /* Hauteur des barres */
+  background: black;
+  /* Couleur des barres */
+  position: absolute;
+  /* Positionnement absolu pour les aligner */
+  transition: all 0.3s;
+  /* Transition douce pour les changements */
+  border-radius: 2px;
+  /* Coins arrondis */
+}
+
+.burger .bar:nth-child(1) {
+  top: 10%;
+  /* La première barre est en haut */
+  width: 25px;
+}
+
+.burger .bar:nth-child(2) {
+  top: 50%;
+  /* La barre du milieu est centrée verticalement */
+  transform: translateY(-50%);
+  /* Centrage vertical */
+  width: 25px;
+}
+
+.burger .bar:nth-child(3) {
+  bottom: 10%;
+  /* La dernière barre est en bas */
+  width: 25px;
+}
+
+.burger.open .bar:nth-child(1) {
+  transform: rotate(45deg);
+  /* Rotation pour la barre supérieure */
+  top: 11px;
+  /* Ajustement vertical */
+  width: 80%;
+}
+
+.burger.open .bar:nth-child(2) {
+  opacity: 0;
+  /* Cache la barre du milieu */
+}
+
+.burger.open .bar:nth-child(3) {
+  transform: rotate(-45deg);
+  /* Rotation pour la barre inférieure */
+  top: 11px;
+  /* Ajustement vertical */
+  width: 80%;
+}
+
+/* Style général pour la section hero */
+.hero {
+  background-color: whitesmoke; /* Couleur de fond douce */
+  padding: 3rem 0; /* Espace supplémentaire pour le haut et le bas */
+  position: relative; /* Nécessaire pour les effets d'overlay ou décoratifs */
+  text-align: center; /* Centrer le texte et l'image à l'intérieur */
+}
+
+/* Conteneur pour maintenir tout bien centré */
+.hero .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px; /* Limite la largeur maximale pour un look plus propre */
+}
+
+/* Style pour la grille (si plus d'éléments sont ajoutés) */
+.hero .grid {
+  display: flex;
+  flex-direction: row; /* Permet d'aligner les éléments horizontalement */
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* Espace entre les éléments */
+}
+
+/* Style spécifique pour l'image */
+.hero__item img {
+  max-width: 90%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px; /* Coins légèrement arrondis pour un effet plus doux */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Ombre subtile pour un effet de profondeur */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition douce pour le hover */
+  border-radius: 20;
+}
+
+/* Effet au survol pour l'image */
+.hero__item img:hover {
+  transform: scale(1.05); /* Agrandit légèrement l'image au survol */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Accentue l'ombre pour un effet de focus */
+}
+
+/* Section Services */
+.services {
+  width: 100%;
+  padding: 40px 20px;
+  background: rgb(213, 206, 190);
+}
+
+/* Container pour centrer le contenu */
+.services .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* Titre de la section */
+.services .title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #333;
+}
+
+/* Grille pour les services */
+.services .grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Une seule colonne qui occupe toute la largeur */
+  gap: 20px;
+}
+
+.services .grid__content {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 20px; /* Espace entre l'image et le texte */
+  text-align: left; /* Aligne le texte à gauche */
+}
+
+/* Limite la largeur de l'image */
+.services .grid__content img {
+  width: 150px; /* Taille fixe de l'image */
+  height: auto;
+  max-width: 150px; /* Assurez-vous que l'image ne dépasse pas 150px de largeur */
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0; /* Supprime la marge pour l'image à côté du texte */
+}
+
+/* Réajustez le texte dans le contenu */
+.services .text-content {
+  flex: 1; /* Le texte occupe le reste de l'espace */
+}
+
+/* Style des éléments de la grille */
+.services .grid__item {
+  background: whitesmoke;
+  padding: 20px;
+  border: 1px solid #ecedee;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Aligne tout le contenu au centre */
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; /* S'étend sur toute la largeur disponible */
+  display: block; /* Assure que tout est en bloc vertical */
+  text-align: left;
+}
+
+.service .grid__item img {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Effet de zoom au survol */
+.services .grid__item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style des titres dans les cases */
+.services .grid__item h4 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Style des paragraphes dans les cases */
+.services .grid__item p {
+  color: #333;
+}
+
+/* grille prestations */
+
+.grille-prix .grid__item li {
+  list-style-type: none; /* Retire le point de la liste */
+  padding: 0; /* Supprime les éventuels padding par défaut */
+  margin: 0; /* Supprime les marges par défaut */
+}
+
+.grille-prix .container {
+  max-width: 100%;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Centrage du bouton entre le titre et l'image */
+.button-container {
+  display: flex;
+  justify-content: center; /* Centre horizontalement le bouton */
+  margin-bottom: 30px; /* Espace entre le bouton et l'image */
+}
+
+/* Style du bouton */
+.grille-prix .discover-btn {
+  background-color: #fff;
+  color: #333;
+  border: 2px solid #333;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grille-prix .discover-btn:hover {
+  background-color: #333;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Grille des items */
+.grille-prix .grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Une seule colonne */
+  justify-items: center; /* Centre les items horizontalement */
+}
+
+/* Style de l'image */
+.grille-prix .grid__item img {
+  width: 100%; /* Prend toute la largeur disponible du parent */
+  height: auto; /* Ajuste la hauteur pour respecter le ratio d'aspect */
+  border-radius: 8px; /* Coins arrondis si souhaité */
+  transition: transform 0.3s ease-in-out; /* Transition pour l'effet de zoom */
+  object-fit: cover; /* S'assure que l'image couvre toute la largeur sans distorsion */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  cursor: pointer;
+}
+
+/* Effet de zoom au survol */
+.grille-prix .grid__item img:hover {
+  transform: scale(1.1); /* Zoom à 110% au survol */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée lors du survol */
+}
+
+/* Section Galerie */
+.galerie {
+  width: 100%;
+  padding: 20px 0;
+  background: rgb(213, 206, 190);
+}
+
+/* Container pour centrer le contenu */
+.galerie .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Titre de la galerie */
+.galerie .title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Grille pour galerie */
+.galerie .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Style des éléments de la grille */
+.grid__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Carte de galerie */
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  /* Assure que la carte occupe toute la hauteur disponible */
+  width: 300px;
+}
+
+/* Image de la carte */
+.card img {
+  width: 100%;
+  height: auto;
+  /* Ajuste la hauteur automatiquement en fonction de la largeur */
+}
+
+/* Contenu interne de la carte */
+.card__inner {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Espace entre les éléments */
+  height: 100%;
+  /* Assure que l'intérieur de la carte occupe toute la hauteur */
+  background-color: white;
+}
+
+/* Titre de la carte */
+.card__title {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0.25rem 0;
+  text-overflow: ellipsis;
+  /* Ajoute une ellipse (...) si le texte est trop long */
+  overflow: hidden;
+  /* Cache le texte qui dépasse */
+  white-space: nowrap;
+  /* Évite les retours à la ligne */
+  color: black;
+}
+
+/* Superposition de la carte */
+.card__overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.678);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 0.5rem;
+}
+
+/* Effet de survol de la carte */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Effet de survol de la superposition */
+.card:hover .card__overlay {
+  opacity: 1;
+}
+
+/* Lien dans la superposition */
+.card__overlay a {
+  color: black;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+/* Style pour le bouton */
+.card__overlay button {
+  background-color: #fff; /* Couleur de fond blanche */
+  color: #000; /* Couleur du texte en noir */
+  border: none;
+  padding: 10px 20px; /* Espacement interne modéré pour un bouton pas trop gros */
+  font-size: 14px; /* Taille de la police modérée */
+  font-weight: bold; /* Texte en gras */
+  cursor: pointer; /* Curseur en forme de main au survol */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transition douce pour les changements de couleur */
+}
+
+/* Effet au survol du bouton */
+.card__overlay button:hover {
+  background-color: #000; /* Couleur de fond noire au survol */
+  color: #fff; /* Texte en blanc au survol */
+}
+
+/* Effet lors du clic sur le bouton */
+.card__overlay button:active {
+  transform: scale(0.98); /* Légère réduction de la taille lors du clic */
+}
+
+/* Pour s'assurer que le lien n'affecte pas le style du bouton */
+.card__overlay a {
+  text-decoration: none; /* Supprimer la sous-ligne du lien */
+}
+
+/* Style général de la section contact */
+.contact {
+  padding: 4rem 1rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.contact .container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.contact .title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Grille des items */
+.contact .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Style des items individuels */
+.contact .grid__item {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.contact .grid__item:hover {
+  transform: translateY(-5px);
+}
+
+/* Style du texte fort */
+.contact strong {
+  display: block;
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Informations */
+.contact .info img {
+  vertical-align: middle;
+  margin-top: 0 auto;
+}
+
+.contact .info h5 {
+  font-size: 1rem;
+  color: red;
+  line-height: 1.5;
+}
+
+/* Téléphone */
+.contact .phone {
+  position: relative;
+  display: inline-block;
+}
+
+.contact .phone-icon img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.contact .popup {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  color: black;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  white-space: nowrap;
+}
+
+/* Carte */
+.contact .map img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.contact .map img:hover {
+  transform: scale(1.05);
+}
+
+/* Réseaux sociaux */
+.contact .social-icons {
+  display: flex;
+  flex-direction: column; /* Affiche les éléments en colonne */
+  align-items: center; /* Centre les éléments */
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.contact .social-icons a {
+  display: flex;
+  flex-direction: column; /* Place l'icône au-dessus du texte */
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.contact .social-icons img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.contact .social-icons a img:hover {
+  transform: scale(1.2);
+}
+
+/* Style de la section message */
+.message {
+  background-color: rgb(213, 206, 190);
+  color: #333;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.message .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.message-popup {
+  display: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  color: #fff;
+  font-weight: bold;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  color: #333;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.form textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.form input[type="submit"] {
+  background-color: black;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.form input[type="submit"]:hover {
+  background-color: #676465;
+}
+
+/* Style général de la section notation */
+.notation {
+  background: #f9f9f9;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Style pour le titre */
+.notation .title {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Style du bouton 'Laissez un avis...' */
+.btn-avis {
+  background-color: black; /* Couleur de fond */
+  color: #fff; /* Couleur du texte */
+  font-size: 1rem; /* Taille du texte */
+  padding: 0.75rem 1.5rem; /* Padding interne */
+  border: none; /* Pas de bordure */
+  border-radius: 5px; /* Coins arrondis */
+  cursor: pointer; /* Curseur de pointeur */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre */
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease; /* Transitions */
+}
+
+/* Effet de survol (hover) pour le bouton */
+.btn-avis:hover {
+  background-color: #676465; /* Couleur de fond au survol */
+  transform: translateY(-2px); /* Légère remontée */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Ombre renforcée */
+}
+
+/* Effet d'appui (active) pour le bouton */
+.btn-avis:active {
+  background-color: black; /* Couleur de fond au clic */
+  transform: translateY(0); /* Annulation de la remontée */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); /* Ombre réduite */
+}
+
+/* Styles pour le texte des avis */
+.review-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left; /* Aligne le texte des avis à gauche */
+  word-wrap: break-word; /* Casse les longs mots pour qu'ils ne débordent pas */
+  width: 100%;
+  max-width: 400px; /* Limite la largeur des avis à 400px */
+  margin: 8px 0; /* Espace entre les avis */
+  line-height: 1.5; /* Hauteur de ligne pour améliorer la lisibilité */
+}
+
+/* Style de base pour le footer */
+.footer {
+  background-color: #f8f9fa;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-top: 1px solid #dee2e6;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer .socials {
+  margin-bottom: 1rem;
+}
+
+.footer .socials ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .socials li {
+  margin: 0 0.5rem;
+}
+
+.footer .socials a {
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.footer .socials svg {
+  fill: currentColor;
+  transition: color 0.3s ease;
+}
+
+.footer .socials a:hover svg {
+  color: #007bff;
+}
+
+.footer p {
+  margin: 1rem 0 0;
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+/* Menu de navigation pour les petits écrans */
+@media screen and (max-width: 749px) {
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .header .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 0 auto;
+  }
+
+  .header .grid {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.2rem;
+  }
+
+  .burger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    background: transparent;
+    border: none;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Barres du burger */
+  .burger div {
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: right 0.5s ease;
+    z-index: 1000;
+    padding-top: 1rem;
+  }
+
+  .nav-menu.open {
+    right: 0;
+    margin-top: 1rem;
+  }
+
+  .nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-menu li {
+    margin: 8px 0;
+  }
+
+  .menu li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s ease;
+  }
+
+  .menu li a:hover {
+    color: #9a9b9c;
+  }
+
+  /* Ajuster la largeur du container pour les petits écrans */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  /* Grille adaptée aux petits écrans */
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Chaque élément de la grille est centré */
+  .grid__item {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .form {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .form input,
+  .form textarea {
+    font-size: 0.9rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .form input[type="submit"] {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .review-item {
+    flex: 1 1 100%; /* Un avis par ligne */
+  }
+
+  .review-item {
+    margin-bottom: 15px;
+  }
+
+  .review-text {
+    line-height: 1.2em; /* Ajustez la hauteur de ligne si nécessaire */
+    max-height: 3.6em; /* Hauteur maximale pour trois lignes */
+    overflow: hidden; /* Masquer le texte qui dépasse */
+    margin: 0;
+    position: relative;
+  }
+
+  .footer {
+    padding: 1rem;
+  }
+
+  .footer .socials ul {
+    flex-direction: column;
+  }
+
+  .footer .socials li {
+    margin: 0.5rem 0;
+  }
+
+  .footer p {
+    font-size: 0.75rem;
+  }
+}
+
+/* Responsive styling pour les grands écrans */
+@media screen and (min-width: 750px) {
+  .burger {
+    display: none;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    position: static;
+    box-shadow: none;
+  }
+
+  .nav-menu .list-unstyled {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-menu li {
+    margin: 8px 0;
+  }
+
+  .menu li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s ease;
+  }
+
+  .menu li a:hover {
+    color: #9a9b9c;
+  }
+
+  .grid__item {
+    flex: 1 1 100%; /* Chaque élément occupe toute la largeur */
+    margin-bottom: 20px;
+  }
+}
+
+/* Style pour la modal */
+.modal {
+  display: none;
+  /* Caché par défaut */
+  position: fixed;
+  /* Fixe par rapport à la fenêtre */
+  z-index: 1000;
+  /* Superpose la modal au-dessus d'autres éléments */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /* Permet le défilement si le contenu est trop grand */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Fond semi-transparent */
+}
+
+/* Style pour le contenu de la modal */
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  /* Centre verticalement avec une marge supérieure */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 500px;
+  /* Limite la largeur maximale de la modal */
+  border-radius: 8px;
+  position: relative;
+  /* Pour positionner le bouton de fermeture */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Ajout d'une légère ombre */
+  animation: fadeIn 0.3s;
+  /* Animation d'apparition */
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Style pour le bouton de fermeture */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #000;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: rgb(126, 120, 120);
+  /* Change la couleur au survol */
+}
+
+/* Style pour les en-têtes */
+.modal-content h3 {
+  margin-top: 0;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+/* Style pour les groupes de formulaire */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Style pour les étiquettes de formulaire */
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Style pour les champs de texte */
+.form-group input[type="text"],
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style pour le bouton de soumission */
+.modal button[type="submit"] {
+  background: black;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  display: block;
+  margin: 20px auto 0 auto;
+  /* Centre le bouton horizontalement */
+}
+
+.modal button[type="submit"]:hover {
+  background: #6c696a;
+  /* Couleur légèrement plus foncée au survol */
+}
+
+/* Style pour les avis */
+.review-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 18px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  width: calc(33.33% - 20px);
+}
+
+.review-item.hidden {
+  display: none;
+}
+
+#reviews-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#reviews-section {
+  padding: 20px;
+  background: #f9f9f9;
+  border-top: 1px solid #ddd;
+}
+
+#toggle-reviews {
+  background: black;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  display: block;
+  margin: 20px auto;
+}
+
+#toggle-reviews:hover {
+  background-color: #878284;
+}
+
+/* Style pour les étoiles */
+.rating {
+  color: #ffa500;
+}
+
+.fas.fa-star,
+.far.fa-star {
+  font-size: 1.2rem;
+  margin-right: 2px;
+}
+
+/* Masquer les avis supplémentaires */
+.hidden {
+  display: none;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    /* Ajuste la valeur de départ pour une animation fluide */
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    /* Ajuste la valeur de départ pour une animation fluide */
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,524 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.content-wrap {
+  flex: 1;
+}
+
+/* Style global pour les titres */
+.title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  margin: 40px 0;
+  position: relative;
+  padding-bottom: 20px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Styles pour les titres h1 */
+h1.title {
+  font-size: 2.5rem;
+  color: #030303;
+  text-transform: uppercase;
+}
+
+/* Styles pour les titres h3 */
+h3.title {
+  font-size: 1.5rem;
+  color: #555;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+/* Styles pour les sous-titres dans les sections */
+h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: #666;
+  text-align: left;
+  margin: 20px 0;
+}
+
+/* Effet de zoom au survol */
+.title:hover {
+  transform: scale(1.1);
+  /* Zoom à 110% */
+  color: #080808;
+  /* Couleur de texte changeant au survol */
+}
+
+/* Contenu principal */
+
+.content-wrap {
+  flex: 1;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list-unstyled {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Header */
+.header {
+  background: rgba(255, 255, 255, 0.545);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Ombre subtile pour un léger effet de profondeur */
+  padding: 1rem 0;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.header .grid {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styles pour le logo */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem; /* Augmenter légèrement la taille pour plus de visibilité */
+  font-weight: 700;
+  color: #0e0e0e;
+  margin: 0;
+  letter-spacing: 1px; /* Espacement des lettres pour un style élégant */
+}
+
+/* style pour l'acceuil */
+
+.grid-acceuil {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.grid-acceuil img {
+  width: 20px; /* Largeur fixe pour l'image */
+  height: 20px; /* Hauteur fixe pour l'image */
+  display: block; /* Éviter l'espacement sous l'image */
+}
+
+/* Style du bouton burger */
+.burger {
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  position: relative;
+  background: transparent;
+  border: none;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Espacement égal entre les barres */
+}
+
+.burger .bar {
+  display: inline-block;
+  /* Affiche les barres */
+  width: 25px;
+  /* Largeur des barres */
+  height: 2px;
+  /* Hauteur des barres */
+  background: black;
+  /* Couleur des barres */
+  position: absolute;
+  /* Positionnement absolu pour les aligner */
+  transition: all 0.3s;
+  /* Transition douce pour les changements */
+  border-radius: 2px;
+  /* Coins arrondis */
+}
+
+.burger .bar:nth-child(1) {
+  top: 10%;
+  /* La première barre est en haut */
+  width: 25px;
+}
+
+.burger .bar:nth-child(2) {
+  top: 50%;
+  /* La barre du milieu est centrée verticalement */
+  transform: translateY(-50%);
+  /* Centrage vertical */
+  width: 25px;
+}
+
+.burger .bar:nth-child(3) {
+  bottom: 10%;
+  /* La dernière barre est en bas */
+  width: 25px;
+}
+
+.burger.open .bar:nth-child(1) {
+  transform: rotate(45deg);
+  /* Rotation pour la barre supérieure */
+  top: 11px;
+  /* Ajustement vertical */
+  width: 80%;
+}
+
+.burger.open .bar:nth-child(2) {
+  opacity: 0;
+  /* Cache la barre du milieu */
+}
+
+.burger.open .bar:nth-child(3) {
+  transform: rotate(-45deg);
+  /* Rotation pour la barre inférieure */
+  top: 11px;
+  /* Ajustement vertical */
+  width: 80%;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap");
+
+/* Style global du conteneur */
+.tarifs .container {
+  margin-top: 60px; /* Espace entre le header et le conteneur */
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+/* Style du titre principal */
+.titre {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  color: #4d695a;
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+}
+
+/* Style pour centrer le titre de section */
+.titre-section {
+  display: block;
+  text-align: center;
+  width: 100%;
+  font-size: 1.8rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  margin: 20px 0; /* Espace autour du titre */
+  color: #4d695a;
+  position: relative;
+}
+
+/* Ajouter une ligne décorative au-dessus du titre de section */
+.titre-section::before {
+  content: "";
+  display: block;
+  width: 80%; /* Largeur du trait */
+  height: 2px; /* Épaisseur du trait */
+  background-color: #4d695a; /* Couleur du trait */
+  margin: 0 auto 10px; /* Centrer le trait et ajouter de l'espace en dessous */
+  position: absolute;
+  top: -10px; /* Positionner le trait au-dessus du titre */
+  left: 0;
+  right: 0;
+}
+
+/* Style pour les sections */
+#tarifs:nth-of-type(1) .container {
+  background-color: #ffffff; /* Fond blanc pour la première section */
+  color: #d8a77e; /* Texte couleur camel */
+}
+
+#tarifs:nth-of-type(2) .container {
+  background-color: #d8a77e; /* Fond camel pour la deuxième section */
+  color: #ffffff; /* Texte blanc */
+}
+
+#tarifs:nth-of-type(3) .container {
+  background-color: #ffffff; /* Fond blanc pour la troisième section */
+  color: #d8a77e; /* Texte couleur camel */
+}
+
+/* Menu des prestations */
+.tarifs .menu {
+  display: block;
+}
+
+/* Style de chaque item de prestation */
+.tarifs .menu__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+  font-family: "Georgia", serif;
+  font-size: 1.2rem;
+}
+
+/* Nom de la prestation */
+.tarifs .prestation {
+  color: inherit; /* Utilise la couleur héritée de la section */
+  text-align: left;
+  font-weight: normal;
+}
+
+/* Prix de la prestation */
+.tarifs .prix {
+  color: inherit; /* Utilise la couleur héritée de la section */
+  text-align: right;
+  font-weight: bold;
+}
+
+/* Effet de hover pour rendre le menu interactif */
+.tarifs .menu__item:hover {
+  background-color: #f9f9f9;
+}
+
+/* Effet de hover pour rendre le menu 2 interactif */
+.tarifs:nth-of-type(2) .menu__item:hover {
+  background-color: #efcf9b76;
+}
+
+/* Style des séparateurs */
+.tarifs .menu__item:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+
+/* Style de base pour le footer */
+.footer {
+  background-color: #f8f9fa;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-top: 1px solid #dee2e6;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Marge pour la dernière section */
+#tarifs:last-of-type {
+  margin-bottom: 50px; /* Ajustez la valeur selon l'espace souhaité */
+}
+
+/* Menu de navigation pour les petits écrans */
+@media screen and (max-width: 749px) {
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .header .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 0 auto;
+  }
+
+  .header .grid {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.2rem;
+  }
+
+  .burger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    background: transparent;
+    border: none;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Barres du burger */
+  .burger div {
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: right 0.5s ease;
+    z-index: 1000;
+    padding-top: 1rem;
+  }
+
+  .nav-menu.open {
+    right: 0;
+    margin-top: 1rem;
+  }
+
+  .nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-menu li {
+    margin: 8px 0;
+  }
+
+  .menu li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s ease;
+  }
+
+  .menu li a:hover {
+    color: #9a9b9c;
+  }
+
+  /* Ajuster la largeur du container pour les petits écrans */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  /* Grille adaptée aux petits écrans */
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Chaque élément de la grille est centré */
+  .grid__item {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Responsive styling pour les grands écrans */
+@media screen and (min-width: 750px) {
+  .burger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    background: transparent;
+    border: none;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: right 0.5s ease;
+    z-index: 1000;
+  }
+
+  .nav-menu.open {
+    right: 0;
+    margin-top: 1rem;
+  }
+
+  .nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-menu li {
+    margin: 8px 0;
+  }
+
+  .menu li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s ease;
+  }
+
+  .menu li a:hover {
+    color: #9a9b9c;
+  }
+}
