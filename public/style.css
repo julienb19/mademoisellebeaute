@@ -213,47 +213,18 @@ h4 {
 
 /* Style général pour la section hero */
 .hero {
-  background-color: whitesmoke; /* Couleur de fond douce */
-  padding: 3rem 0; /* Espace supplémentaire pour le haut et le bas */
-  position: relative; /* Nécessaire pour les effets d'overlay ou décoratifs */
-  text-align: center; /* Centrer le texte et l'image à l'intérieur */
+  background-color: white; /* Couleur de fond très claire */
+  padding: 6rem 1rem; /* Espacement pour le haut et le bas */
+  text-align: center; /* Centre le contenu */
 }
 
-/* Conteneur pour maintenir tout bien centré */
-.hero .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 0 auto;
-  max-width: 1200px; /* Limite la largeur maximale pour un look plus propre */
-}
-
-/* Style pour la grille (si plus d'éléments sont ajoutés) */
-.hero .grid {
-  display: flex;
-  flex-direction: row; /* Permet d'aligner les éléments horizontalement */
-  justify-content: center;
-  align-items: center;
-  gap: 2rem; /* Espace entre les éléments */
-}
-
-/* Style spécifique pour l'image */
-.hero__item img {
-  max-width: 90%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  border-radius: 12px; /* Coins légèrement arrondis pour un effet plus doux */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Ombre subtile pour un effet de profondeur */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition douce pour le hover */
-  border-radius: 20;
-}
-
-/* Effet au survol pour l'image */
-.hero__item img:hover {
-  transform: scale(1.05); /* Agrandit légèrement l'image au survol */
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Accentue l'ombre pour un effet de focus */
+/* Style spécifique pour l'image dans la section hero */
+.hero-image {
+  height: auto; /* Maintient la proportionnalité de l'image */
+  border-radius: 8px; /* Coins légèrement arrondis pour un effet plus doux */
+  display: block; /* Assure que l'image est affichée comme un bloc */
+  margin: 0 auto; /* Centre l'image horizontalement */
+  width: 400px;
 }
 
 /* Section Services */
@@ -1104,11 +1075,6 @@ h4 {
 
   .menu li a:hover {
     color: #9a9b9c;
-  }
-
-  .grid__item {
-    flex: 1 1 100%; /* Chaque élément occupe toute la largeur */
-    margin-bottom: 20px;
   }
 }
 
