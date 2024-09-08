@@ -15,6 +15,11 @@ app.use(express.urlencoded({ extended: true }));
 // Servir les fichiers statiques depuis le dossier 'public'
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Route pour servir le formulaire de contact
+app.get('/contact-form', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 // Utiliser le routeur pour les routes '/contact'
 app.use('/contact', contactRouter);
 
