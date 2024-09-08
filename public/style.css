@@ -62,10 +62,6 @@ h4 {
 
 /* Contenu principal */
 
-.content-wrap {
-  flex: 1;
-}
-
 .d-flex {
   display: flex;
   align-items: center;
@@ -211,20 +207,25 @@ h4 {
   width: 80%;
 }
 
-/* Style général pour la section hero */
 .hero {
+  display: flex;
+  flex-direction: column; /* Aligne les enfants en colonne */
+  align-items: center; /* Centre horizontalement */
+  justify-content: center; /* Centre verticalement */
+  margin: 0;
   background-color: white; /* Couleur de fond très claire */
   padding: 6rem 1rem; /* Espacement pour le haut et le bas */
-  text-align: center; /* Centre le contenu */
+  text-align: center; /* Centre le texte à l'intérieur de la section */
 }
 
 /* Style spécifique pour l'image dans la section hero */
 .hero-image {
+  width: 100%; /* Fait en sorte que l'image utilise toute la largeur disponible */
+  max-width: 400px; /* Limite la largeur maximale de l'image */
   height: auto; /* Maintient la proportionnalité de l'image */
   border-radius: 8px; /* Coins légèrement arrondis pour un effet plus doux */
   display: block; /* Assure que l'image est affichée comme un bloc */
   margin: 0 auto; /* Centre l'image horizontalement */
-  width: 400px;
 }
 
 /* Section Services */
@@ -809,44 +810,6 @@ h4 {
 .footer .container {
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.footer .socials {
-  margin-bottom: 1rem;
-}
-
-.footer .socials ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer .socials li {
-  margin: 0 0.5rem;
-}
-
-.footer .socials a {
-  color: #333;
-  display: flex;
-  align-items: center;
-}
-
-.footer .socials svg {
-  fill: currentColor;
-  transition: color 0.3s ease;
-}
-
-.footer .socials a:hover svg {
-  color: #007bff;
-}
-
-.footer p {
-  margin: 1rem 0 0;
-  font-size: 0.875rem;
-  color: #6c757d;
 }
 
 /* Menu de navigation pour les petits écrans */
