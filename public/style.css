@@ -549,12 +549,6 @@ h4 {
   margin: 0 auto;
 }
 
-.contact .title {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #333;
-}
-
 /* Grille des items */
 .contact .grid {
   display: grid;
@@ -578,23 +572,26 @@ h4 {
 }
 
 /* Style du texte fort */
-.contact strong {
+.contact h4 {
   display: block;
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 10px;
-}
-
-/* Informations */
-.contact .info img {
-  vertical-align: middle;
-  margin-top: 0 auto;
-}
-
-.contact .info h5 {
   font-size: 1rem;
-  color: red;
+  color: #555;
+}
+
+.contact h4::after {
+  content: "";
+  display: block;
+  width: 100%; /* Largeur du trait (peut être ajusté) */
+  height: 2px; /* Épaisseur du trait */
+  background-color: #555; /* Couleur du trait (peut être modifié) */
+  margin: 10px 0; /* Espacement au-dessus et en dessous du trait */
+}
+
+.contact .info p {
+  font-size: 1.3rem;
+  color: black;
   line-height: 1.5;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 /* Téléphone */

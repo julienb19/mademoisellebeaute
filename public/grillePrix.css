@@ -456,6 +456,22 @@ h4 {
     width: 100%;
     max-width: 100%;
   }
+
+  .tarifs .menu__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    font-family: "Georgia", serif;
+    font-size: 1rem;
+  }
+
+  /* Prix de la prestation */
+  .tarifs .prix {
+    color: inherit; /* Utilise la couleur héritée de la section */
+    text-align: right;
+    font-weight: bold;
+  }
 }
 
 /* Responsive styling pour les grands écrans */
